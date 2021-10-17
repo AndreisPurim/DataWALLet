@@ -6,20 +6,18 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Switch from '@material-ui/core/Switch';
 
-export default function SwitchesGroup() {
+export default function SwitchesGroup(props) {
   const [state, setState] = React.useState({
     gilad: true,
     jason: false,
     antoine: true,
   });
-
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Facebook</FormLabel>
+      <FormLabel component="legend">{props.title}</FormLabel>
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={state.gilad} onChange={handleChange} name="gilad" />}
@@ -34,7 +32,6 @@ export default function SwitchesGroup() {
           label="Photo Galery"
         />
       </FormGroup>
-      <FormHelperText>Be careful with your data!</FormHelperText>
     </FormControl>
   );
 }

@@ -19,7 +19,10 @@ export default function App() {
                 alignItems="center"
                 style={{padding:'2rem'}}
                 >
-                    <Switches />
+                    <Switches title={'Facebook'} />
+                    <Switches title={'Amazon'} />
+                    <Switches title={'Google'} />
+                    <Switches title={'Whatsapp'} />
             </Grid>
         </>
     )
